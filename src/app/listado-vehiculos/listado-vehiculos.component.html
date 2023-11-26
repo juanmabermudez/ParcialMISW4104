@@ -1,0 +1,48 @@
+<style>
+  .align-left {
+    text-align: left;
+    margin-left: 0;
+    line-height: 0.5; 
+  }
+  .bold-number {
+    font-weight: bold;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+<div class="portada">
+  <img src=".\assets\images\portada.jpg" alt="Portada">
+</div>
+
+<table class="table smaller-width-table">
+  <thead class="thead-dark"> 
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Línea</th>
+      <th scope="col">Modelo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehiculo of vehiculos; let i = index">
+      <td class="bold-number">{{ i + 1 }}</td>
+      <td>{{ vehiculo.marca }}</td>
+      <td>{{ vehiculo.linea }}</td>
+      <td>{{ vehiculo.modelo }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+    <p class="align-left">Total Renault: {{ getTotalPorMarca('Renault') }}</p>
+    <p class="align-left">Total Chevrolet: {{ getTotalPorMarca('Chevrolet') }}</p>
+    <p class="align-left">Total Nissan: {{ getTotalPorMarca('Nissan') }}</p>
+</div>
+
+<footer class="footer">
+  <p class="contact-info">
+    Contact us: +573102105253 - info@tusegundazo.com - @tusegundazo
+  </p>
+</footer>
